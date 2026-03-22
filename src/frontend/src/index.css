@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Deep navy gaming dark theme */
+    --background: 0.14 0.025 240;
+    --foreground: 0.94 0.015 240;
+    --card: 0.18 0.028 240;
+    --card-foreground: 0.94 0.015 240;
+    --popover: 0.18 0.028 240;
+    --popover-foreground: 0.94 0.015 240;
+    --primary: 0.72 0.2 200;
+    --primary-foreground: 0.1 0.015 240;
+    --secondary: 0.22 0.035 240;
+    --secondary-foreground: 0.94 0.015 240;
+    --muted: 0.22 0.03 240;
+    --muted-foreground: 0.6 0.02 240;
+    --accent: 0.22 0.03 240;
+    --accent-foreground: 0.94 0.015 240;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.04 240;
+    --input: 0.28 0.04 240;
+    --ring: 0.72 0.2 200;
+    --chart-1: 0.72 0.2 200;
+    --chart-2: 0.65 0.22 280;
+    --chart-3: 0.7 0.22 330;
+    --chart-4: 0.75 0.19 84;
+    --chart-5: 0.65 0.18 162;
+    --sidebar: 0.16 0.025 240;
+    --sidebar-foreground: 0.94 0.015 240;
+    --sidebar-primary: 0.72 0.2 200;
+    --sidebar-primary-foreground: 0.1 0.015 240;
+    --sidebar-accent: 0.22 0.035 240;
+    --sidebar-accent-foreground: 0.94 0.015 240;
+    --sidebar-border: 0.28 0.04 240;
+    --sidebar-ring: 0.72 0.2 200;
+
+    /* Gaming accent colors */
+    --cyan: 0.8 0.18 200;
+    --electric-blue: 0.6 0.22 262;
+    --purple: 0.58 0.22 290;
+    --magenta: 0.65 0.25 330;
+    --star-yellow: 0.82 0.18 84;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-neon {
+    background: linear-gradient(
+      135deg,
+      oklch(0.82 0.18 200),
+      oklch(0.58 0.22 290),
+      oklch(0.65 0.25 330)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-neon {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.18 200),
+      oklch(0.58 0.22 290),
+      oklch(0.65 0.25 330)
+    );
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+
+  .btn-neon:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .card-gaming {
+    background: oklch(0.18 0.028 240);
+    border: 1px solid oklch(0.28 0.04 240);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px oklch(0 0 0 / 40%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .genre-pill-active {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.18 200),
+      oklch(0.58 0.22 290)
+    );
+    color: white;
+    box-shadow: 0 0 12px oklch(0.72 0.18 200 / 50%);
+  }
+
+  .hero-panel {
+    background: linear-gradient(
+      135deg,
+      oklch(0.16 0.04 245) 0%,
+      oklch(0.2 0.05 260) 50%,
+      oklch(0.18 0.04 250) 100%
+    );
+    border: 1px solid oklch(0.3 0.06 240);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        oklch(0.72 0.18 200 / 5%) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, oklch(0.72 0.18 200 / 5%) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px oklch(0.72 0.18 200 / 30%);
+  }
+}
